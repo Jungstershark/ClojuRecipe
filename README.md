@@ -27,17 +27,17 @@ git clone https://github.com/michael-hoon/clojurecipe.git
 
 - Run the following command on terminal to start the program:
 
-```java
-java -jar target/uberjar/assignment-Final-standalone.jar 
-```
+     ```java
+     java -jar target/uberjar/assignment-Final-standalone.jar 
+     ```
 
-1. Follow the prompts to enter your `app-id` and `api-key`. Following which, enter the available main ingredients which you have, comma separated.
+-  Follow the prompts to enter your `app-id` and `api-key`. Following which, enter the available main ingredients which you have, comma separated.
 
-2. The program will generate a list of the top three recipes that can be cooked using the ingredients available to you, as well as additional ingredients which are required. 
+- The program will generate a list of the top three recipes that can be cooked using the ingredients available to you, as well as additional ingredients which are required. 
 
-3. The program will also redirect you to the relevant URLs that are linked to the webpage containing step-by-step instructions on how to cook the dish. Proceed to follow the instructions and cook your meals!
+- The program will also redirect you to the relevant URLs that are linked to the webpage containing step-by-step instructions on how to cook the dish. Proceed to follow the instructions and cook your meals!
 
-4. Once the webpages have been brought up, enter `ctrl-c` on your terminal to exit the application. If you wish to run the program again, follow the steps above once more. 
+- Once the webpages have been brought up, enter `ctrl-c` on your terminal to exit the application. If you wish to run the program again, follow the steps above once more. 
 
 
 ## Functional Programming Concepts
