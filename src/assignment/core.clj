@@ -34,7 +34,7 @@
   (println))
 
 (defn open-url [url]
-  (let [browser "chrome"] 
+  (let [browser "firefox"] 
     (sh/sh browser url)))
 
 (defn extract-url [recipe]

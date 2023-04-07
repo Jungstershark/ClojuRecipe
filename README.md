@@ -5,7 +5,7 @@ ClojuRecipe is a command-line program that uses the Edamam API to suggest recipe
 Before using ClojuRecipe, you will need to install the following:
 
 1. [Java Development Kit (JDK)](https://www.oracle.com/sg/java/technologies/downloads/)
-2. [Leiningen](https://leiningen.org/)
+2. [Leiningen](https://leiningen.org/) (Not necessary, but good to have)
 
 ClojuRecipe uses Leiningen as a dependency management tool for configurating our project files. To install Leiningen, follow the instructions on the documentation page, for the appropriate operating system. **This app currently only works with the default firefox browser. Make sure to set the firefox application to your PATH environment variables.**
 
@@ -30,6 +30,7 @@ git clone https://github.com/michael-hoon/clojurecipe.git
      ```java
      java -jar target/uberjar/assignment-Final-standalone.jar 
      ```
+- Alternatively, if you have leiningen already installed in your system
 
 -  Follow the prompts to enter your `app-id` and `api-key`. Following which, enter the available main ingredients which you have, comma separated.
 
@@ -37,7 +38,7 @@ git clone https://github.com/michael-hoon/clojurecipe.git
 
 - The program will also redirect you to the relevant URLs that are linked to the webpage containing step-by-step instructions on how to cook the dish. Proceed to follow the instructions and cook your meals!
 
-- Once the webpages have been brought up, enter `ctrl-c` on your terminal to exit the application. If you wish to run the program again, follow the steps above once more. 
+- You will be able to search for as many different recipes as possible for different ingredients, by returning to the terminal again  
 
 
 ## Functional Programming Concepts
@@ -54,10 +55,10 @@ Example from code:
 In the source code, `edamam-url` is defined as an immutable variable using `def`. This ensures that its value cannot be changed once it is defined.
 
 ### Pure Functions
-`get-recipe`, `get-top-3`, `display-recipe`, and `extract-url` functions are all pure functions, which means they have no side effects and always return the same output for the same input. Respectively, they are actions, calculations, actions, and actions. 
+`get-recipe`, `get-top-3`, `display-recipe`, `extract-url`, `open-url`, and `start-repl` are all pure functions, which means they have no side effects and always return the same output for the same input. With the exception of `get-top-3` being a calculation, the rest are all actions.
 
 ### Higher-order Functions
-Higher-order functions are functions that take other functions as arguments or return functions as values. They are a fundamental aspect of functional programming, as they enable code reuse and abstraction. `map`, `take`, and `doseq` are all higher-order functions, which means they take one or more functions as arguments and/or return a function as a result.
+Higher-order functions are functions that take other functions as arguments or return functions as values. They are a fundamental aspect of functional programming, as they enable code reuse and abstraction. `map`, `take`, `doseq`, and `start-repl` are all higher-order functions, which means they take one or more functions as arguments and/or return a function as a result.
 
 Example from source code:
 ```clojure
@@ -69,6 +70,9 @@ Example from source code:
 ```
 
 In the code, map is used to transform the :hits property of the JSON object into a sequence of recipe maps. The anonymous function `#(get % :recipe)` is passed as an argument to map, which returns the value of the :recipe key for each map in the sequence. The pipeline function `->` will be explained below.
+
+### Loops
+The `start-repl` function is a higher order function which demonstrates the input/output while loop functionality, by taking a 'handler' function. Specifically, this is the conditional that the user enters either the ingredients that they have, or the string `"Quit"`. This is called every time the user inputs a command into the terminal. By making use of higher function orders such as `start-repl`, the code becomes more modular and can be applied to different scenarios requiring a conditional loop. 
 
 ### Function Composition
 The act of chaining multiple functions together to create a new function.
