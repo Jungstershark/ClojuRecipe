@@ -34,11 +34,24 @@
   (println))
 
 (defn open-url [url]
-  (let [browser "firefox"] 
+  (let [browser "chrome"] 
     (sh/sh browser url)))
 
 (defn extract-url [recipe]
   (open-url (:url recipe)))
+
+(defn start-repl [app-id app-key]
+  (while true
+    (println "Enter your available ingredients, separated by commas (or enter 'Quit' to exit): ")
+    (let [input (read-line)]
+      (if (= input "Quit")
+        (do
+          (println "Hope you enjoyed cooking, Goodbye!")
+          (System/exit 0))
+        (let [ingredients (clojure.string/split input #",")]
+          (doseq [recipe (get-top-3 (get-recipe ingredients app-id app-key))]
+            (display-recipe recipe) 
+            (extract-url recipe)))))))
 
 (defn -main []
   (println "Welcome to ClojuRecipe! We'll provide you with delicious recipes that you can cook at home, based on the ingredients which you have!")
@@ -46,8 +59,5 @@
   (let [app-id (read-line)]
     (println "Enter your Edamam API-key: ")
     (let [app-key (read-line)]
-      (println "Enter your available ingredients, separated by commas: ")
-      (let [ingredients (clojure.string/split (read-line) #",")]
-        (doseq [recipe (get-top-3 (get-recipe ingredients app-id app-key))]
-          (display-recipe recipe) 
-          (extract-url recipe))))))
+      (start-repl app-id app-key))))
+
