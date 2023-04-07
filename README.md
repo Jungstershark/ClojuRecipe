@@ -30,7 +30,11 @@ git clone https://github.com/michael-hoon/clojurecipe.git
      ```java
      java -jar target/uberjar/assignment-Final-standalone.jar 
      ```
-- Alternatively, if you have leiningen already installed in your system
+- Alternatively, if you have leiningen already installed in your system, you can simply run:
+
+     ```bash 
+     lein run
+     ```
 
 -  Follow the prompts to enter your `app-id` and `api-key`. Following which, enter the available main ingredients which you have, comma separated.
 
