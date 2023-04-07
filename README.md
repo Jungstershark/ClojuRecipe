@@ -36,7 +36,7 @@ git clone https://github.com/michael-hoon/clojurecipe.git
      lein run
      ```
 
--  Follow the prompts to enter your `app-id` and `api-key`. Following which, enter the available main ingredients which you have, comma separated.
+-  If it is the first time you are using ClojuRecipe, follow the prompts to enter your `app-id` and `app-key`. Otherwise, proceed to enter the available main ingredients which you have, comma separated.
 
 - The program will generate a list of the top three recipes that can be cooked using the ingredients available to you, as well as additional ingredients which are required. 
 
@@ -51,15 +51,8 @@ Clojurecipe makes use of several programming concepts:
 ### Immutable Variables
 Immutable variables are variables that cannot be modified once they are defined. In Clojure, variables defined with def are immutable by default. This encourages functional programming by minimizing the potential for side effects.
 
-Example from code:
-```clojure
-(def edamam-url "https://api.edamam.com/api/recipes/v2")
-```
-
-In the source code, `edamam-url` is defined as an immutable variable using `def`. This ensures that its value cannot be changed once it is defined.
-
 ### Pure Functions
-`get-recipe`, `get-top-3`, `display-recipe`, `extract-url`, `open-url`, and `start-repl` are all pure functions, which means they have no side effects and always return the same output for the same input. With the exception of `get-top-3` being a calculation, the rest are all actions.
+`get-recipe`, `get-top-3`, `display-recipe`, `extract-url`, `open-url`, are all pure functions, which means they have no side effects and always return the same output for the same input. This allows the functions to be modular and easily tested.
 
 ### Higher-order Functions
 Higher-order functions are functions that take other functions as arguments or return functions as values. They are a fundamental aspect of functional programming, as they enable code reuse and abstraction. `map`, `take`, `doseq`, and `start-repl` are all higher-order functions, which means they take one or more functions as arguments and/or return a function as a result.
@@ -95,6 +88,47 @@ In the code, `->` is used to thread the url value through a sequence of function
 
 ## Source Code Navigation
 The source code for our project can be found under the `src/assignment` folder, which contains the `core.clj` file with all of the function definitions. Our project file with dependencies used can be found in `project.clj`.
+
+## Code Explanation
+
+The code is written in a functional programming style, which means that it emphasizes the use of functions and immutable data structures. The code is also designed to be modular and reusable, with each function serving a specific purpose.
+
+Here is a brief explanation of each function:
+`get-recipe`
+
+This function takes in a list of ingredients, an application ID, and an application key, and makes an API call to Edamam to retrieve a list of recipes that match the ingredients. The function returns the top three recipes.
+
+`get-top-3`
+
+This function takes in a list of recipes and returns the top three recipes.
+
+`display-recipe`
+
+This function takes in a recipe and displays the recipe name, the list of ingredients, and a link to the full recipe instructions.
+
+`open-url`
+
+This function takes in a URL and opens it in a web browser.
+
+`extract-url`
+
+This function takes in a recipe and opens the URL for the full recipe instructions in a web browser.
+
+`check-keys`
+
+This function checks whether the keys.txt file exists in the project directory.
+
+`read-keys`
+
+This function reads the Edamam application ID and application key from the keys.txt file.
+
+`write-keys`
+
+This function prompts the user to enter their Edamam application ID and application key, and writes the credentials to the keys.txt file.
+
+`start-repl`
+
+This function starts a REPL (Read-Eval-Print Loop) that prompts the user to enter the ingredients that they have available. The function then displays the top three recipes that match the ingredients, and prompts the user to choose a recipe. If the user chooses a recipe, the function opens the URL for the full recipe instructions in a web browser. If the user enters "Quit", the function exits.
 
 ## Future Improvements
 1. Ability to tell users what ingredients are missing from their stash.

@@ -9,8 +9,8 @@
 ; You can make Calva auto-select this.
 ;   - See https://calva.io/connect-sequences/
 ; 
-; Starting Jack-in Terminal: cmd.exe /d /c lein update-in :dependencies conj [nrepl,"1.0.0"] -- update-in :plugins conj [cider/cider-nrepl,"0.28.5"] -- update-in [:repl-options,:nrepl-middleware] conj '["cider.nrepl/cider-middleware"]' -- repl :headless
-; Using host:port 127.0.0.1:49175 ...
+; Starting Jack-in Terminal: lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Using host:port 127.0.0.1:37781 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; TIPS:
@@ -23,13 +23,232 @@
 clj꞉assignment.core꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 clj꞉assignment.core꞉> 
+#'assignment.core/-main
+clj꞉assignment.core꞉> 
+Enter your Edamam app-id: 
 nil
 clj꞉assignment.core꞉> 
-#'assignment.core/edamam-url
+; Syntax error compiling at (src/assignment/core.clj:1:7934).
+; Unable to resolve symbol: app-id in this context
 clj꞉assignment.core꞉> 
-#'assignment.core/app-id
+#'assignment.core/check-keys
 clj꞉assignment.core꞉> 
-#'assignment.core/app-key
+; Execution error (ArityException) at assignment.core/check-keys (form-init6471633467604974639.clj:59).
+; Wrong number of args (0) passed to: clojure.core/line-seq
 clj꞉assignment.core꞉> 
-#'assignment.core/get-recipe
+; Execution error (ArityException) at assignment.core/eval10680 (form-init6471633467604974639.clj:62).
+; Wrong number of args (1) passed to: assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+nil
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/start-repl
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/check-keys
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+true
+clj꞉assignment.core꞉> 
+
+nil
+clj꞉assignment.core꞉> 
+
+nil
+clj꞉assignment.core꞉> 
+#'assignment.core/read-keys
+clj꞉assignment.core꞉> 
+["open" "two"]
+clj꞉assignment.core꞉> 
+nil
+clj꞉assignment.core꞉> 
+("open")
+clj꞉assignment.core꞉> 
+"hi"
+clj꞉assignment.core꞉> 
+; Execution error (ClassCastException) at assignment.core/eval11012 (form-init6471633467604974639.clj:67).
+; class java.lang.String cannot be cast to class clojure.lang.IFn (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉assignment.core꞉> 
+"hi"
+clj꞉assignment.core꞉> 
+; Execution error (ArityException) at assignment.core/eval11016 (form-init6471633467604974639.clj:65).
+; Wrong number of args (1) passed to: assignment.core/start-repl
+clj꞉assignment.core꞉> 
+Enter your available ingredients, separated by commas (or enter 'Quit' to exit): 
+Recipe:  Chicken Vesuvio
+Ingredients:
+   1/2 cup olive oil
+   5 cloves garlic, peeled
+   2 large russet potatoes, peeled and cut into chunks
+   1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)
+   3/4 cup white wine
+   3/4 cup chicken stock
+   3 tablespoons chopped parsley
+   1 tablespoon dried oregano
+   Salt and pepper
+   1 cup frozen peas, thawed
+Instructions: http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html
+
+Recipe:  Chicken Paprikash
+Ingredients:
+   640 grams chicken - drumsticks and thighs ( 3 whole chicken legs cut apart)
+   1/2 teaspoon salt
+   1/4 teaspoon black pepper
+   1 tablespoon butter – cultured unsalted (or olive oil)
+   240 grams onion sliced thin (1 large onion)
+   70 grams Anaheim pepper chopped (1 large pepper)
+   25 grams paprika (about 1/4 cup)
+   1 cup chicken stock
+   1/2 teaspoon salt
+   1/2 cup sour cream
+   1 tablespoon flour – all-purpose
+Instructions: http://norecipes.com/recipe/chicken-paprikash/
+
+Recipe:  Baked Chicken
+Ingredients:
+   6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on
+   1/2 teaspoon coarse salt
+   1/2 teaspoon Mrs. Dash seasoning
+   1/4 teaspoon freshly ground black pepper
+Instructions: http://www.marthastewart.com/318981/baked-chicken
+
+Enter your available ingredients, separated by commas (or enter 'Quit' to exit): 
+Recipe:  Chili Cheese Dog Grilled Cheese Recipe
+Ingredients:
+   2 tablespoons butter, cut into three even pieces
+   1 hot dog, cut into 4 thin slices lengthwise
+   2 slices hearty white bread, such as Pepperidge Farm or Arnold
+   2 slices American, Cheddar, or Jack cheese
+   1/2 cup your favorite chili
+   Kosher salt
+Instructions: http://www.seriouseats.com/recipes/2015/02/chili-cheese-dogs-grilled-cheese-recipe.html
+
+Recipe:  Pizza Dog
+Ingredients:
+   4 hot dogs
+   4 hot dog buns, split
+   1/2 cup marinara sauce
+   4 ounces fresh mozzarella, sliced
+   1/4 cup fresh basil leaves
+Instructions: https://www.realsimple.com/food-recipes/browse-all-recipes/pizza-hot-dog
+
+Recipe:  Salsa Hot Dog
+Ingredients:
+   2 tablespoons diced fresh tomato
+   1 tablespoon thinly sliced fresh jalapeño, or to taste
+   2 teaspoons sliced scallion
+   1 grilled hot dog (see Tip)
+   1 whole-wheat hot dog bun, toasted if desired
+Instructions: http://www.eatingwell.com/recipe/250323/salsa-hot-dog/
+
+Enter your available ingredients, separated by commas (or enter 'Quit' to exit): 
+Hope you enjoyed cooking, Goodbye!
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Using host:port 127.0.0.1:40333 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉assignment.core꞉> 
+; Jack-in done.
+clj꞉assignment.core꞉> 
+#'assignment.core/write-keys
+clj꞉assignment.core꞉> 
+#'assignment.core/write-keys
+clj꞉assignment.core꞉> 
+Enter your Edamam app-id: 
+Enter your Edamam API-key: 
+nil
+clj꞉assignment.core꞉> 
+#'assignment.core/start-repl
+clj꞉assignment.core꞉> 
+[""]
+clj꞉assignment.core꞉> 
+[""]
+clj꞉assignment.core꞉> 
+[""]
+clj꞉assignment.core꞉> 
+true
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+true
+clj꞉assignment.core꞉> 
+#'assignment.core/-main
+clj꞉assignment.core꞉> 
+true
+clj꞉assignment.core꞉> 
+[""]
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+true
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+["dsfsd" "sdfsd"]
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+false
+clj꞉assignment.core꞉> 
+["dsfsd" "sdfsd"]
+clj꞉assignment.core꞉> 
+2
+clj꞉assignment.core꞉> 
+true
+clj꞉assignment.core꞉> 
+true
 clj꞉assignment.core꞉> 
