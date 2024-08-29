@@ -1,4 +1,8 @@
 # ClojuRecipe
+[![GitHub license](https://img.shields.io/github/license/Jungstershark/ClojuRecipe)](https://github.com/Jungstershark/ClojuRecipe/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Jungstershark/ClojuRecipe?style=social)](https://github.com/Jungstershark/ClojuRecipe/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Jungstershark/ClojuRecipe?style=social)](https://github.com/Jungstershark/ClojuRecipe/network/members)
+
 ClojuRecipe is a command-line program that uses the Edamam API to suggest recipes based on ingredients. It is written in the Clojure programming language and makes use of functional programming concepts.
 
 ## Prerequisites
